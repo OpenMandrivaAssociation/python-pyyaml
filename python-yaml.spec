@@ -12,7 +12,6 @@ Source0:        http://pyyaml.org/download/pyyaml/PyYAML-%{version}.tar.gz
 Provides:       %{real_name} = %{epoch}:%{name}-%{version}
 %py_requires -d
 BuildArch:      noarch
-BuildRoot:      %{_tmppath}/%{name}-%{version}-%{release}-root
 
 %description
 PyYAML is a YAML parser and emitter for the Python programming
