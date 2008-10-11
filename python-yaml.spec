@@ -1,17 +1,17 @@
 %define real_name PyYAML
 
 Name:           python-yaml
-Version:        3.05
-Release:        %mkrel 2
+Version:        3.06
+Release:        %mkrel 1
 Epoch:          0
 Summary:        Python package implementing YAML parser and emitter
-License:        GPL
+License:        MIT
 Group:          Development/Python
 URL:            http://pyyaml.org/
 Source0:        http://pyyaml.org/download/pyyaml/PyYAML-%{version}.tar.gz
-Provides:       %{real_name} = %{epoch}:%{name}-%{version}
+Provides:       %{real_name} = %{epoch}:%{version}-%{release}
 %py_requires -d
-BuildArch:      noarch
+BuildRequires:	yaml-devel
 BuildRoot:      %{_tmppath}/%{name}-%{version}-%{release}-root
 
 %description
@@ -25,8 +25,8 @@ and interaction with scripting languages.
 %setup -q -n %{real_name}-%{version}
 
 %build
+export CFLAGS="%{optflags}"
 %{__python} setup.py build
-
 
 %install
 %{__rm} -rf %{buildroot}
@@ -37,7 +37,7 @@ and interaction with scripting languages.
 %{__rm} -rf %{buildroot}
 
 %files
-%defattr(0644,root,root,0755)
-%doc LICENSE README examples
 %defattr(-,root,root,0755)
-%{py_puresitedir}/yaml
+%doc LICENSE README examples
+%{python_sitearch}/yaml
+%{python_sitearch}/*.so
