@@ -2,7 +2,7 @@
 
 Name:           python-yaml
 Version:        3.09
-Release:        %mkrel 2
+Release:        %mkrel 3
 Epoch:          0
 Summary:        Python package implementing YAML parser and emitter
 License:        MIT
