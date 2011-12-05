@@ -1,8 +1,8 @@
 %define real_name PyYAML
 
 Name:           python-yaml
-Version:        3.09
-Release:        %mkrel 4
+Version:        3.10
+Release:        %mkrel 1
 Epoch:          0
 Summary:        Python package implementing YAML parser and emitter
 License:        MIT
@@ -25,19 +25,15 @@ and interaction with scripting languages.
 %setup -q -n %{real_name}-%{version}
 
 %build
-export CFLAGS="%{optflags}"
 %{__python} setup.py build
 
 %install
 %{__rm} -rf %{buildroot}
-%{__python} setup.py install -O2 --skip-build --root=%{buildroot} --prefix=%{_prefix}
-%{_bindir}/find %{buildroot} -name \*.egg-info | %{_bindir}/xargs %{__rm}
+PYTHONDONTWRITEBYTECODE= %{__python} setup.py install --skip-build --root=%{buildroot} --record=FILE_LIST
 
 %clean
 %{__rm} -rf %{buildroot}
 
-%files
+%files -f FILE_LIST
 %defattr(-,root,root,0755)
-%doc LICENSE README examples
-%{python_sitearch}/yaml
-%{python_sitearch}/*.so
+%doc CHANGES LICENSE README examples/
