@@ -1,8 +1,8 @@
 %define real_name PyYAML
 
 Name:           python-yaml
-Version:        3.09
-Release:        %mkrel 7
+Version:        3.10
+Release:        2
 Epoch:          0
 Summary:        Python package implementing YAML parser and emitter
 License:        MIT
