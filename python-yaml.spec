@@ -61,16 +61,16 @@ pushd python3
 %{__python3} setup.py install -O2 --skip-build --root=%{buildroot} --prefix=%{_prefix}
 popd
 
-%{_bindir}/find %{buildroot} -name \*.egg-info | %{_bindir}/xargs %{__rm}
- 
 %files -n python-yaml
 %defattr(-,root,root,0755)
 %doc python2/LICENSE python2/README python2/examples
 %{python_sitearch}/yaml
 %{python_sitearch}/*.so
+%{python_sitearch}/*.egg-info
 
 %files -n python3-yaml
 %defattr(-,root,root,0755)
 %doc python3/LICENSE python3/README python3/examples
 %{python3_sitearch}/yaml
 %{python3_sitearch}/*.so
+%{python3_sitearch}/*.egg-info
