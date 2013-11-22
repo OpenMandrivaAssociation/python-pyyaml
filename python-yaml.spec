@@ -1,18 +1,17 @@
 %define real_name PyYAML
  
-Name:           python-yaml
-Version:        3.10
-Release:        3
-Epoch:          0
-Summary:        Python package implementing YAML parser and emitter
-License:        MIT
-Group:          Development/Python
-URL:            http://pyyaml.org/
-Source0:        http://pyyaml.org/download/pyyaml/PyYAML-%{version}.tar.gz
-Provides:       %{real_name} = %{epoch}:%{version}-%{release}
-BuildRequires:  python-devel
+Summary:	Python package implementing YAML parser and emitter
+Name:		python-yaml
+Version:	3.10
+Release:	3
+License:	MIT
+Group:		Development/Python
+Url:		http://pyyaml.org/
+Source0:	http://pyyaml.org/download/pyyaml/PyYAML-%{version}.tar.gz
 BuildRequires:	yaml-devel
-BuildRequires:  python3-devel
+BuildRequires:	pkgconfig(python)
+BuildRequires:	pkgconfig(python3)
+Provides:	%{real_name} = %{EVRD}
  
 %description
 PyYAML is a YAML parser and emitter for the Python programming
@@ -22,10 +21,9 @@ YAML is a data serialization format designed for human readability
 and interaction with scripting languages.
  
 %package -n python3-yaml
-Summary:        Python package implementing YAML parser and emitter
-Group:          Development/Python
-BuildRequires:	yaml-devel
-Requires:		python3
+Summary:	Python package implementing YAML parser and emitter
+Group:		Development/Python
+Requires:	python3
  
 %description -n python3-yaml
 PyYAML is a YAML parser and emitter for the Python programming
@@ -62,15 +60,14 @@ pushd python3
 popd
 
 %files -n python-yaml
-%defattr(-,root,root,0755)
 %doc python2/LICENSE python2/README python2/examples
 %{python_sitearch}/yaml
 %{python_sitearch}/*.so
 %{python_sitearch}/*.egg-info
 
 %files -n python3-yaml
-%defattr(-,root,root,0755)
 %doc python3/LICENSE python3/README python3/examples
 %{python3_sitearch}/yaml
 %{python3_sitearch}/*.so
 %{python3_sitearch}/*.egg-info
+
