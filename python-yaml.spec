@@ -10,7 +10,7 @@ Group:          Development/Python
 URL:            http://pyyaml.org/
 Source0:        http://pyyaml.org/download/pyyaml/PyYAML-%{version}.tar.gz
 Provides:       %{real_name} = %{epoch}:%{version}-%{release}
-%py_requires -d
+BuildRequires:  pkgconfig(python)
 BuildRequires:	yaml-devel
 BuildRoot:      %{_tmppath}/%{name}-%{version}-%{release}-root
 
