@@ -2,8 +2,8 @@
  
 Summary:	Python package implementing YAML parser and emitter
 Name:		python-yaml
-Version:	3.10
-Release:	7
+Version:	3.11
+Release:	1
 License:	MIT
 Group:		Development/Python
 Url:		http://pyyaml.org/
@@ -42,28 +42,28 @@ cp -r python2 python3
 export CFLAGS="%{optflags}"
 
 pushd python2
-%{__python} setup.py build
+python2 setup.py build
 popd
 
 pushd python3
-%{__python3} setup.py build
+python3 setup.py build
 popd
  
 %install
 
 pushd python2
-%{__python} setup.py install -O2 --skip-build --root=%{buildroot} --prefix=%{_prefix}
+python2 setup.py install -O2 --skip-build --root=%{buildroot} --prefix=%{_prefix}
 popd
 
 pushd python3
-%{__python3} setup.py install -O2 --skip-build --root=%{buildroot} --prefix=%{_prefix}
+python3 setup.py install -O2 --skip-build --root=%{buildroot} --prefix=%{_prefix}
 popd
 
 %files -n python-yaml
 %doc python2/LICENSE python2/README python2/examples
-%{python_sitearch}/yaml
-%{python_sitearch}/*.so
-%{python_sitearch}/*.egg-info
+%{python2_sitearch}/yaml
+%{python2_sitearch}/*.so
+%{python2_sitearch}/*.egg-info
 
 %files -n python3-yaml
 %doc python3/LICENSE python3/README python3/examples
