@@ -3,7 +3,7 @@
 Summary:	Python package implementing YAML parser and emitter
 Name:		python-yaml
 Version:	3.11
-Release:	3
+Release:	4
 License:	MIT
 Group:		Development/Python
 Url:		http://pyyaml.org/
@@ -20,12 +20,12 @@ language.
 YAML is a data serialization format designed for human readability
 and interaction with scripting languages.
  
-%package -n python3-yaml
+%package -n python2-yaml
 Summary:	Python package implementing YAML parser and emitter
 Group:		Development/Python
-Requires:	python3
+Requires:	python2
  
-%description -n python3-yaml
+%description -n python2-yaml
 PyYAML is a YAML parser and emitter for the Python programming
 language. 
  
@@ -61,13 +61,13 @@ popd
 
 %files -n python-yaml
 %doc python2/LICENSE python2/README python2/examples
-%{python2_sitearch}/yaml
-%{python2_sitearch}/*.so
-%{python2_sitearch}/*.egg-info
-
-%files -n python3-yaml
-%doc python3/LICENSE python3/README python3/examples
 %{python3_sitearch}/yaml
 %{python3_sitearch}/*.so
 %{python3_sitearch}/*.egg-info
+
+%files -n python2-yaml
+%doc python3/LICENSE python3/README python3/examples
+%{python2_sitearch}/yaml
+%{python2_sitearch}/*.so
+%{python2_sitearch}/*.egg-info
 
