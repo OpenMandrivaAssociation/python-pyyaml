@@ -3,7 +3,7 @@
 Summary:	Python package implementing YAML parser and emitter
 Name:		python-yaml
 Version:	3.11
-Release:	5
+Release:	6
 License:	MIT
 Group:		Development/Python
 Url:		http://pyyaml.org/
@@ -12,6 +12,7 @@ BuildRequires:	yaml-devel
 BuildRequires:	pkgconfig(python)
 BuildRequires:	pkgconfig(python3)
 Provides:	%{real_name} = %{EVRD}
+Provides:	python3egg(pyyaml)
  
 %description
 PyYAML is a YAML parser and emitter for the Python programming
@@ -24,6 +25,7 @@ and interaction with scripting languages.
 Summary:	Python package implementing YAML parser and emitter
 Group:		Development/Python
 Requires:	python2
+Provides:	pythonegg(pyyaml)
  
 %description -n python2-yaml
 PyYAML is a YAML parser and emitter for the Python programming
