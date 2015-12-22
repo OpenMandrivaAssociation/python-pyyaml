@@ -1,4 +1,5 @@
 %define real_name PyYAML
+%define _disable_lto 1
  
 Summary:	Python package implementing YAML parser and emitter
 Name:		python-yaml
@@ -41,7 +42,7 @@ mv %{real_name}-%{version} python2
 cp -r python2 python3
  
 %build
-export CFLAGS="%{optflags}"
+export CFLAGS="%{optflags} -fno-lto"
 
 pushd python2
 python2 setup.py build
