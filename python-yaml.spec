@@ -13,6 +13,8 @@ BuildRequires:	yaml-devel
 BuildRequires:	pkgconfig(python)
 BuildRequires:	pkgconfig(python3)
 BuildRequires:	python-cython
+BuildRequires:	python2-setuptools
+BuildRequires:	python2-pkg-resources
 Provides:	%{real_name} = %{EVRD}
 Provides:	python3egg(pyyaml)
  
