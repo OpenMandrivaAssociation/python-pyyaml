@@ -11,7 +11,7 @@ Url:		http://pyyaml.org/
 Source0:	http://pyyaml.org/download/pyyaml/PyYAML-%{version}.tar.gz
 BuildRequires:	yaml-devel
 BuildRequires:	pkgconfig(python)
-BuildRequires:	pkgconfig(python3)
+BuildRequires:	pkgconfig(python2)
 BuildRequires:	python-cython
 BuildRequires:	python2-setuptools
 BuildRequires:	python2-pkg-resources
