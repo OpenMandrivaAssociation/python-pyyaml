@@ -3,12 +3,12 @@
  
 Summary:	Python package implementing YAML parser and emitter
 Name:		python-yaml
-Version:	3.12
-Release:	4
+Version:	4.1
+Release:	1
 License:	MIT
 Group:		Development/Python
 Url:		http://pyyaml.org/
-Source0:	http://pyyaml.org/download/pyyaml/PyYAML-%{version}.tar.gz
+Source0:	https://github.com/yaml/pyyaml/archive/pyyaml-%{version}.tar.gz
 BuildRequires:	yaml-devel
 BuildRequires:	pkgconfig(python)
 BuildRequires:	pkgconfig(python2)
@@ -52,32 +52,31 @@ cython _yaml.pyx
 export CFLAGS="%{optflags} -fno-lto"
 
 pushd python2
-%{__python2} setup.py build
+python setup.py build
 popd
 
 pushd python3
-%{__python} setup.py build
+python setup.py build
 popd
  
 %install
 
 pushd python2
-%{__python2} setup.py install -O2 --skip-build --root=%{buildroot} --prefix=%{_prefix}
+python setup.py install -O2 --skip-build --root=%{buildroot} --prefix=%{_prefix}
 popd
 
 pushd python3
-%{__python} setup.py install -O2 --skip-build --root=%{buildroot} --prefix=%{_prefix}
+python setup.py install -O2 --skip-build --root=%{buildroot} --prefix=%{_prefix}
 popd
 
 %files -n python-yaml
 %doc python2/LICENSE python2/README python2/examples
-%{python3_sitearch}/yaml
-%{python3_sitearch}/*.so
-%{python3_sitearch}/*.egg-info
+%{py3_platsitedir}/yaml
+%{py3_platsitedir}/*.so
+%{py3_platsitedir}/*.egg-info
 
 %files -n python2-yaml
 %doc python3/LICENSE python3/README python3/examples
-%{python2_sitearch}/yaml
-%{python2_sitearch}/*.so
-%{python2_sitearch}/*.egg-info
-
+%{py_platsitedir}/yaml
+%{py_platsitedir}/*.so
+%{py_platsitedir}/*.egg-info
