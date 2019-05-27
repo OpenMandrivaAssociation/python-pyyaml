@@ -3,13 +3,13 @@
  
 Summary:	Python package implementing YAML parser and emitter
 Name:		python-yaml
-Version:	3.12
-Release:	4
+Version:	5.1
+Release:	1
 License:	MIT
 Group:		Development/Python
 Url:		http://pyyaml.org/
 Source0:	http://pyyaml.org/download/pyyaml/PyYAML-%{version}.tar.gz
-BuildRequires:	yaml-devel
+BuildRequires:	pkgconfig(yaml-0.1)
 BuildRequires:	pkgconfig(python)
 BuildRequires:	pkgconfig(python2)
 BuildRequires:	python-cython
@@ -51,23 +51,23 @@ cython _yaml.pyx
 %build
 export CFLAGS="%{optflags} -fno-lto"
 
-pushd python2
+cd python2
 %{__python2} setup.py build
-popd
+cd -
 
-pushd python3
+cd python3
 %{__python} setup.py build
-popd
+cd -
  
 %install
 
-pushd python2
+cd python2
 %{__python2} setup.py install -O2 --skip-build --root=%{buildroot} --prefix=%{_prefix}
-popd
+cd -
 
-pushd python3
+cd python3
 %{__python} setup.py install -O2 --skip-build --root=%{buildroot} --prefix=%{_prefix}
-popd
+cd -
 
 %files -n python-yaml
 %doc python2/LICENSE python2/README python2/examples
