@@ -2,7 +2,7 @@
 %define _disable_lto 1
  
 Summary:	Python package implementing YAML parser and emitter
-Name:		python-yaml
+Name:		python-pyyaml
 Version:	5.1
 Release:	1
 License:	MIT
@@ -17,6 +17,7 @@ BuildRequires:	python2-setuptools
 BuildRequires:	python2-pkg-resources
 Provides:	%{real_name} = %{EVRD}
 Provides:	python3egg(pyyaml)
+Provides:	python-yaml = %{EVRD}
  
 %description
 PyYAML is a YAML parser and emitter for the Python programming
