@@ -1,8 +1,9 @@
 %define real_name PyYAML
 %define _disable_lto 1
+%define module pyyaml
  
 Summary:	Python package implementing YAML parser and emitter
-Name:		python-pyyaml
+Name:		python-%{module}
 Version:	5.1
 Release:	1
 License:	MIT
@@ -26,13 +27,14 @@ language.
 YAML is a data serialization format designed for human readability
 and interaction with scripting languages.
  
-%package -n python2-yaml
+%package -n python2-%{module}
 Summary:	Python package implementing YAML parser and emitter
 Group:		Development/Python
 Requires:	python2
 Provides:	pythonegg(pyyaml)
+Provides:	python2-yaml = %{EVRD}
  
-%description -n python2-yaml
+%description -n python2-%{module}
 PyYAML is a YAML parser and emitter for the Python programming
 language. 
  
@@ -70,13 +72,13 @@ cd python3
 %{__python} setup.py install -O2 --skip-build --root=%{buildroot} --prefix=%{_prefix}
 cd -
 
-%files -n python-yaml
+%files -n python-%{module}
 %doc python2/LICENSE python2/README python2/examples
 %{python3_sitearch}/yaml
 %{python3_sitearch}/*.so
 %{python3_sitearch}/*.egg-info
 
-%files -n python2-yaml
+%files -n python2-%{module}
 %doc python3/LICENSE python3/README python3/examples
 %{python2_sitearch}/yaml
 %{python2_sitearch}/*.so
