@@ -4,12 +4,12 @@
  
 Summary:	Python package implementing YAML parser and emitter
 Name:		python-%{module}
-Version:	5.2
-Release:	3
+Version:	5.3
+Release:	1
 License:	MIT
 Group:		Development/Python
 Url:		http://pyyaml.org/
-Source0:	https://pyyaml.org/download/pyyaml/PyYAML-%{version}.tar.gz
+Source0:	https://files.pythonhosted.org/packages/3d/d9/ea9816aea31beeadccd03f1f8b625ecf8f645bd66744484d162d84803ce5/PyYAML-5.3.tar.gz
 BuildRequires:	pkgconfig(yaml-0.1)
 BuildRequires:	pkgconfig(python)
 BuildRequires:	pkgconfig(python2)
