@@ -8,7 +8,7 @@ Version:	6.0
 Release:	3
 License:	MIT
 Group:		Development/Python
-Url:		http://pyyaml.org/
+Url:		https://pyyaml.org/
 Source0:	https://files.pythonhosted.org/packages/36/2b/61d51a2c4f25ef062ae3f74576b01638bebad5e045f747ff12643df63844/%{real_name}-%{version}.tar.gz
 BuildRequires:	pkgconfig(yaml-0.1)
 BuildRequires:	pkgconfig(python)
