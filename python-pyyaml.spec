@@ -1,19 +1,18 @@
 %define _empty_manifest_terminate_build 0
-%define real_name PyYAML
 %define module pyyaml
 
 Summary:	Python package implementing YAML parser and emitter
 Name:		python-%{module}
-Version:	6.0
-Release:	3
+Version:	6.0.2
+Release:	1
 License:	MIT
 Group:		Development/Python
 Url:		https://pyyaml.org/
-Source0:	https://files.pythonhosted.org/packages/36/2b/61d51a2c4f25ef062ae3f74576b01638bebad5e045f747ff12643df63844/%{real_name}-%{version}.tar.gz
+Source0:	https://files.pythonhosted.org/packages/source/p/pyyaml/%{module}-%{version}.tar.gz
 BuildRequires:	pkgconfig(yaml-0.1)
 BuildRequires:	pkgconfig(python)
 BuildRequires:	python-cython
-Provides:	%{real_name} = %{EVRD}
+Provides:	PyYAML = %{EVRD}
 Provides:	python3egg(pyyaml)
 %rename python-yaml
 
@@ -25,7 +24,7 @@ YAML is a data serialization format designed for human readability
 and interaction with scripting languages.
 
 %prep
-%autosetup -p1 -n %{real_name}-%{version}
+%autosetup -p1 -n %{module}-%{version}
 
 %build
 %py_build
@@ -35,4 +34,4 @@ and interaction with scripting languages.
 
 %files
 %{python_sitearch}/*yaml
-%{python_sitearch}/*.egg-info
+%{python_sitearch}/PyYAML-%{version}.dist-info
