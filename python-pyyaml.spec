@@ -34,4 +34,4 @@ and interaction with scripting languages.
 
 %files
 %{python_sitearch}/*yaml
-%{python_sitearch}/PyYAML-%{version}.dist-info
+%{python_sitearch}/pyyaml-%{version}.dist-info
