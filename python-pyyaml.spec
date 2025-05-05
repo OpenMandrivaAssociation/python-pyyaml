@@ -4,7 +4,7 @@
 Summary:	Python package implementing YAML parser and emitter
 Name:		python-%{module}
 Version:	6.0.2
-Release:	1
+Release:	2
 License:	MIT
 Group:		Development/Python
 Url:		https://pyyaml.org/
