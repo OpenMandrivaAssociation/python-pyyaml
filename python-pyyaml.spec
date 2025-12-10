@@ -9,6 +9,8 @@ License:	MIT
 Group:		Development/Python
 Url:		https://pyyaml.org/
 Source0:	https://files.pythonhosted.org/packages/source/p/pyyaml/%{module}-%{version}.tar.gz
+BuildRequires:  python-pip
+BuildRequires:  python-wheel
 BuildRequires:	pkgconfig(yaml-0.1)
 BuildRequires:	pkgconfig(python)
 BuildRequires:	python-cython
